@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Guilt Calculator",
+  "version": "1.0.0",
+  "description": "Your food, your consequences bestie 🍕 — a loving guilt-trip widget for your Swiggy & Zomato checkout.",
+  "permissions": ["activeTab"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.swiggy.com/*",
+        "https://swiggy.com/*",
+        "https://www.zomato.com/*",
+        "https://zomato.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
